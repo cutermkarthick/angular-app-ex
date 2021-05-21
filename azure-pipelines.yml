@@ -24,7 +24,7 @@ steps:
 - task: PublishTestResults@2
   displayName: 'Publish Unit test Results'
   inputs:
-    searchFolder: $(System.DefaultWorkingDirectory)
+    searchFolder: $(System.DefaultWorkingDirectory)/testresults/junit
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
     testRunTitle: 'Angular'
