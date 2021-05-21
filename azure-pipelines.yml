@@ -18,7 +18,5 @@ steps:
 - script: |
     npm install
     npm run build
-  displayName: 'npm install and build'
-
-- script: npx ng test --watch=false  
-  displayName: 'npm Tests'
+    npm run test --watch=false
+  displayName: 'npm install, build and test'
