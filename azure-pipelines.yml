@@ -20,8 +20,11 @@ steps:
     npm run build
     npm run test --watch=false
   displayName: 'npm install, build and test'
+
 - task: PublishTestResults@2
+  condition: succeededOrFailed()
+  displayName: 'Publish Test Results'
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
-  displayName: 'Publish Test Results'
+    testResultsFiles: $(System.DefaultWorkingDirectory)/test-report.xml
+  
