@@ -23,6 +23,7 @@ steps:
 
 - task: PublishTestResults@2
   displayName: 'Publish Unit test Results'
+  condition: succeededOrFailed()
   inputs:
     searchFolder: '$(System.DefaultWorkingDirectory)/unittests/junit'
     testResultsFormat: 'JUnit'
