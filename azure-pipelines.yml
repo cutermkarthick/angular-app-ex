@@ -18,15 +18,15 @@ steps:
 - script: |
     npm install
     npm run build
-    npm run test --watch=false
+    npm run test --watch=false --code-coverage
   displayName: 'npm install, build and test'
 
 - task: PublishTestResults@2
   displayName: 'Publish Unit test Results'
   inputs:
-    searchFolder: $(System.DefaultWorkingDirectory)/unittests
+    searchFolder: '$(System.DefaultWorkingDirectory)/unittests/junit'
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    testResultsFiles: "TESTS-*.xml"
     testRunTitle: 'Angular'
     
 - task: PublishCodeCoverageResults@1
