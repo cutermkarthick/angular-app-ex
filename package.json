@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "install-puppeteer": "cd node_modules/puppeteer && npm run install",
-    "test": "npm run install-puppeteer && ng test  --watch=false  --code-coverage --karmaConfig=karma.conf.js  --browsers=ChromeHeadlessCustom --reporters=junit,progress",
+    "test": "npm run install-puppeteer && ng test  --watch=false  --code-coverage --karmaConfig karma.conf.js  --browsers=ChromeHeadlessCustom --reporters=junit,progress",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
